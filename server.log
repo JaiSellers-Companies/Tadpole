@@ -1,0 +1,6 @@
+
+> talmadge-gpt@0.0.0 server
+> node server/index.js
+
+◇ injected env (0) from .env // tip: ◈ encrypted .env [www.dotenvx.com]
+Talmadge GPT AI server running at http://localhost:3001

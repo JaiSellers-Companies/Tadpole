@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: talmadge-gpt
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: node server/index.js
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production

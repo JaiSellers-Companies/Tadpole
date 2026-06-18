@@ -1,0 +1,33 @@
+environments:
+  dev:
+    project: jsco-core-storage
+    region: us-central1
+    variables:
+      OAUTH_CODE: "CmxfU1ZJX0VNLUNfb0N1aFpVREdBVWlQMDFCUlVSSVpsOXhUMDUzUVRjM1NXazVlbVJaYjFOU1IwcHVNVlpWVTJaT1lXbGZjVzFqT1cxR1NuQnFUVWhaZGxOV1QzWjVkekJmT0RjeVpUVnVOQV8"
+    resources:
+      - type: bigquery.dataset
+        name: talmadge_analytics
+        definition:
+          labels:
+            env: dev
+            datacloud: antigravity
+      - type: bigquery.table
+        name: communication_history
+        parent: talmadge_analytics
+        definition:
+          schema:
+            fields:
+              - name: message_id
+                type: STRING
+              - name: timestamp
+                type: TIMESTAMP
+              - name: sender
+                type: STRING
+              - name: text
+                type: STRING
+              - name: message_length
+                type: INTEGER
+          labels:
+            env: dev
+            datacloud: antigravity
+
